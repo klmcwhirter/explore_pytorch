@@ -1,0 +1,32 @@
+[project]
+name = "explore_pytorch"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Kevin McWhirter", email = "klmcw@yahoo.com"},
+]
+dependencies = [
+    "torch>=2.2.2",
+    "torchvision>=0.17.2",
+    "torchaudio>=2.2.2",
+    "pandas>=2.2.2",
+    "scikit-learn>=1.4.2",
+    "ipykernel>=6.29.4",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=8.1.1",
+]
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+create.shell = "pdm venv remove -y in-project; pdm install"
+clean.shell = "sudo find . -type d -name __pycache__ -exec rm -fr {} \\;;for d in ${TO_DEL};do echo $d;rm -fr $d;done"
+clean.env = { TO_DEL = ".pytest_cache" }
+clean.help = "Clean environment"
