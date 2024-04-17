@@ -42,6 +42,11 @@ Then install the Python extensions.
 ### Test setup in VS Code
 `Run All` in [jupyter/pytorch-install-jul-2020.ipynb](./jupyter/pytorch-install-jul-2020.ipynb)
 
+### Force CPU Only
+See this project for a tool to disable the GPU: [nvidia_more_battery](https://github.com/klmcwhirter/nvidia-more-battery)
+
+Once you have nvidia_more_battery `enabled` and have rebooted run the tests again to see the difference!
+
 ## Jupyter Notebooks
 * light-weight performance test [jupyter/t81_558_class_03_2_pytorch.ipynb](./jupyter/t81_558_class_03_2_pytorch.ipynb)
 
