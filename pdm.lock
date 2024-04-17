@@ -2,10 +2,10 @@
 # It is not intended for manual editing.
 
 [metadata]
-groups = ["default", "dev"]
+groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:27ffe4046a899222f91b0b97ef28cd68d3d6fe0c454450307cb0f8fa79cd8d12"
+content_hash = "sha256:536e0c3a714806965c39143f9626505c0d7b5812541463eaa64760f779f9cae6"
 
 [[package]]
 name = "appnope"
