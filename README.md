@@ -12,6 +12,12 @@ The purpose of this project is to capture the things needed to consider when get
 
 ## Pre-requisites
 
+### Fedora 39
+
+To install Fedora 39 (40 will be released soon) go to [LINK](https://fedoraproject.org/workstation/download) and download the Fedora Media Writer.
+
+You can write the installer to a thumb drive of about 20GB or so.
+
 ### CUDA NVIDIA driver
 To install the CUDA NVIDIA driver on Fedora 39 see [installation instructions](./jupyter/installing_cuda_drivers_on_fedora39.ipynb)
 
