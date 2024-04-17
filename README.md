@@ -54,5 +54,21 @@ Once you have nvidia_more_battery `enabled` and have rebooted run the tests agai
 TBD
 
 ## References
+
+### PyTorch
+* [PyTorch docs](https://pytorch.org/docs/stable/index.html)
+* [PyTorch Tutorials](https://pytorch.org/tutorials/)
+* [PyTorch GitHub repo](https://github.com/pytorch/pytorch)
+
+### NVIDIA and CUDA
 * [Nvidia CUDA in 100 Seconds](https://youtu.be/pPStdjuYzSI)
+* [NVIDIA XFree86 README](http://us.download.nvidia.com/XFree86/Linux-x86_64/550.67/README/index.html)
+* [Chapter 17. Using the NVIDIA Driver with Optimus Laptops](http://us.download.nvidia.com/XFree86/Linux-x86_64/550.67/README/optimus.html)
+* [Chapter 35. PRIME Render Offload](http://us.download.nvidia.com/XFree86/Linux-x86_64/550.67/README/primerenderoffload.html)
+* [archwiki PRIME](https://wiki.archlinux.org/title/PRIME)
+* [archwiki NVIDIA](https://wiki.archlinux.org/title/NVIDIA)
 * [How to Install NVIDIA Drivers on Fedora 39, 38 Linux](https://www.linuxcapable.com/how-to-install-nvidia-drivers-on-fedora-linux/)
+
+### Professor at WSUTL
+* [T81 558: Applications of Deep Neural Networks](https://github.com/jeffheaton/app_deep_learning)
+* [Original T81 558:Applications of Deep Neural Networks](https://github.com/jeffheaton/t81_558_deep_learning/tree/476c4df534dea71539bdc17742b5e92a255af880/) this commit still contains some PyTorch content
