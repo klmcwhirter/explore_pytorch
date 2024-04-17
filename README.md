@@ -47,6 +47,7 @@ Once you have nvidia_more_battery `enabled` and have rebooted run the tests agai
 
 ## Jupyter Notebooks
 * light-weight performance test [jupyter/t81_558_class_03_2_pytorch.ipynb](./jupyter/t81_558_class_03_2_pytorch.ipynb)
+* performance test runs in ~3 mins w/GPU; >24 mins w/CPU [jupyter/t81_558_class_08_4_bayesian_hyperparameter_opt.ipynb](./jupyter/t81_558_class_08_4_bayesian_hyperparameter_opt.ipynb)
 
 ## References
 
