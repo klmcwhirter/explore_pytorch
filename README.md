@@ -19,7 +19,7 @@ To install Fedora 39 (40 will be released soon) go to [LINK](https://fedoraproje
 You can write the installer to a thumb drive of about 20GB or so.
 
 ### CUDA NVIDIA driver
-To install the CUDA NVIDIA driver on Fedora 39 see [installation instructions](./jupyter/installing_cuda_drivers_on_fedora39.ipynb)
+To install the CUDA NVIDIA driver on Fedora 39 see [installation instructions](./jupyter/installing_cuda_drivers_on_fedora39.md)
 
 ### Python 3.12
 Fedora 39 comes with Python 3.12.2. But, to be certain ...
