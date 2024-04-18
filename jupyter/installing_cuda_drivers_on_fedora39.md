@@ -50,11 +50,3 @@ Select the appropriate one corresponding to your Fedora version to integrate the
 ```bash
 sudo dnf module install nvidia-driver:latest-dkms
 ```
-
-##### To enable Wayland touchpad gesture support execute:
-
-Clone and setup this repo: https://github.com/klmcwhirter/nvidia-more-battery
-
-```bash
-pdm wayland
-```
