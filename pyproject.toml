@@ -23,6 +23,6 @@ distribution = false
 
 [tool.pdm.scripts]
 create.shell = "pdm venv remove -y in-project; pdm install"
-clean.shell = "sudo find . -type d -name __pycache__ -exec rm -fr {} \\;;for d in ${TO_DEL};do echo $d;rm -fr $d;done"
+clean.shell = "find . -type d -name __pycache__ -exec rm -fr {} \\;;for d in ${TO_DEL};do echo $d;rm -fr $d;done"
 clean.env = { TO_DEL = ".pytest_cache" }
 clean.help = "Clean environment"
