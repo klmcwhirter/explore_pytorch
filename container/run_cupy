@@ -1,0 +1,25 @@
+#!/bin/bash
+
+MOUNT_POINT=/cupy-vol
+
+if [[ "$1" == *".py" ]]
+then
+  file=$(basename $1)
+
+  CMD="python3 ${MOUNT_POINT}/$1"
+  MOUNT="--volume $PWD:${MOUNT_POINT}:Z"
+
+  shift
+else
+  file="cupy-0"
+  echo file=${file}
+  CMD=""
+  MOUNT="--volume $PWD:${MOUNT_POINT}:Z"
+fi
+
+#CMD="ls -alh ${MOUNT_POINT}"
+CMD="${CMD} $@"
+
+echo podman run ${MOUNT} --device nvidia.com/gpu=all --name ${file} --rm -it cupy/cupy ${CMD}
+podman run ${MOUNT} --device nvidia.com/gpu=all --name ${file} --rm -it cupy/cupy ${CMD}
+

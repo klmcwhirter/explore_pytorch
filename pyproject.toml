@@ -13,6 +13,7 @@ dependencies = [
     "scikit-learn>=1.4.2",
     "ipykernel>=6.29.4",
     "bayesian-optimization>=1.4.3",
+    "nbformat>=5.10.4",
 ]
 requires-python = ">=3.12"
 readme = "README.md"
@@ -26,3 +27,5 @@ create.shell = "pdm venv remove -y in-project; pdm install"
 clean.shell = "find . -type d -name __pycache__ -exec rm -fr {} \\;;for d in ${TO_DEL};do echo $d;rm -fr $d;done"
 clean.env = { TO_DEL = ".pytest_cache" }
 clean.help = "Clean environment"
+
+start = "ipython jupyter/pytorch-install-jul-2020.ipynb"
