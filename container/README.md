@@ -1,4 +1,12 @@
-# cupy examples using container
+# Exploring CuPy Using the Official Container and Example Programs
+
+The CuPy [official site](https://cupy.dev/) defines the library as:
+> NumPy/SciPy-compatible Array Library for GPU-accelerated Computing with Python
+
+The main focus is on [NVIDIA GPUs by integrating with the CUDA Toolkit](https://docs.cupy.dev/en/v13.3.0/install.html#requirements),
+but experimental support is available for [AMD ROCm GPUs](https://docs.cupy.dev/en/v13.3.0/install.html#using-cupy-on-amd-gpu-experimental).
+
+## cupy examples using container
 These are a few of the examples from https://github.com/cupy/cupy/tree/main/examples.
 
 A helper script [run_cupy](./run_cupy) has been provided to show how to run them
@@ -16,14 +24,28 @@ I have only tested this on Fedora 40. The pre-requisites may be lighter without 
 ## Run them
 
 * start by pulling the docker.io/cupy/cupy image if not already done above. It is quite large and so this will take some time.
+* I do reccomend following all the steps from the [LINK](https://copr.fedorainfracloud.org/coprs/g/ai-ml/nvidia-container-toolkit/)
+above as there are some security setup and validation steps that shouild be run.
 
 ```bash
+# OPTIONAL - should have already been done when following steps from
+# https://copr.fedorainfracloud.org/coprs/g/ai-ml/nvidia-container-toolkit/
 podman pull cupy/cupy
 ```
 
-* To verify setup ...
+* To verify basic script usage ... you should see the contents of `$PWD` from inside the container.
+> An error could indicate inproper setup, security perms, etc.
+
 ```bash
 ./run_cupy ls -lah /cupy-vol/
+```
+
+* Display GPU info
+
+> Should output information for the first GPU by default.
+
+```bash
+./run_cupy examples/cuda_info.py
 ```
 
 * Run monte carlo simulation ...
@@ -31,13 +53,20 @@ podman pull cupy/cupy
 ./run_cupy examples/finance/monte_carlo.py
 ```
 
-* Display GPU info
+* Display CLI help
+> Each of the scripts take command line options ...
+
 ```bash
-./run_cupy examples/cuda_info.py
+./run_cupy examples/cuda_info.py --help
 ```
 
 ## Selective Examples
 
 * [Display CUDA and GPU info](./examples/cuda_info.py)
-* [CuPy Conjugate gradient example](./examples/cg/cg.py)
-* [Monte-Carlo simulation](./examples/finance/monte_carlo.py)
+* [CuPy Conjugate gradient example](./examples/cg/cg.py) - 100% Python program
+* [Monte-Carlo simulation](./examples/finance/monte_carlo.py) - Python and a [User-Defined CUDA Kernel](https://docs.cupy.dev/en/stable/user_guide/kernel.html) in C/C++
+* [Squared_diffs using @cupy.fuse](./examples/fuse/fused_squared_diffs.py)
+
+## See Also
+
+* [Accelerating Machine Learning on a Linux Laptop with an External GPU](https://developer.nvidia.com/blog/accelerating-machine-learning-on-a-linux-laptop-with-an-external-gpu/)

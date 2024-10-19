@@ -20,6 +20,10 @@ fi
 #CMD="ls -alh ${MOUNT_POINT}"
 CMD="${CMD} $@"
 
-echo podman run ${MOUNT} --device nvidia.com/gpu=all --name ${file} --rm -it cupy/cupy ${CMD}
-podman run ${MOUNT} --device nvidia.com/gpu=all --name ${file} --rm -it cupy/cupy ${CMD}
+# $(timedatectl show -p Timezone --value) these values do not work in the cupy/cupy image
 
+# change the default below to suite your needs or set the TZ variable before running this script.
+TZ=${TZ:-PST8PDT}
+
+echo podman run ${MOUNT} --device nvidia.com/gpu=all -e TZ=${TZ} --name ${file} --rm -it cupy/cupy ${CMD}
+podman run ${MOUNT} --device nvidia.com/gpu=all -e TZ=${TZ} --name ${file} --rm -it cupy/cupy ${CMD}
