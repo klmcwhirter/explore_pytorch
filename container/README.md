@@ -6,6 +6,8 @@ The CuPy [official site](https://cupy.dev/) defines the library as:
 The main focus is on [NVIDIA GPUs by integrating with the CUDA Toolkit](https://docs.cupy.dev/en/v13.3.0/install.html#requirements),
 but experimental support is available for [AMD ROCm GPUs](https://docs.cupy.dev/en/v13.3.0/install.html#using-cupy-on-amd-gpu-experimental).
 
+> Intro video - [CuPy A NumPy compatible Library for the GPU - Sean Farley](https://youtu.be/_AKDqw6li58)
+
 ## cupy examples using container
 These are a few of the examples from https://github.com/cupy/cupy/tree/main/examples.
 
