@@ -22,8 +22,31 @@ CMD="${CMD} $@"
 
 # $(timedatectl show -p Timezone --value) these values do not work in the cupy/cupy image
 
-# change the default below to suite your needs or set the TZ variable before running this script.
+# change the default below to suit your needs or set the TZ variable before running this script.
 TZ=${TZ:-PST8PDT}
 
-echo podman run ${MOUNT} --device nvidia.com/gpu=all -e TZ=${TZ} --name ${file} --rm -it cupy/cupy ${CMD}
-podman run ${MOUNT} --device nvidia.com/gpu=all -e TZ=${TZ} --name ${file} --rm -it cupy/cupy ${CMD}
+# Don't do this - Needs to run as root to write to /.cupy
+# --user ${UID}:${UID}
+
+# Updated to run on bluefin-dx-nvidia-open:stable
+RUN_CMD="podman \
+  run \
+  --security-opt=no-new-privileges \
+  --cap-drop=ALL \
+  --security-opt label=type:nvidia_container_t  \
+  --device=nvidia.com/gpu=all \
+  ${MOUNT} \
+  -e TZ=${TZ} --name ${file} --rm -it \
+  cupy/cupy \
+  ${CMD}"
+
+echo ${RUN_CMD}
+${RUN_CMD}
+
+# This was working on Fedora WS 40
+# echo podman run ${MOUNT} --device nvidia.com/gpu=all -e TZ=${TZ} --name ${file} --rm -it cupy/cupy ${CMD}
+# podman run ${MOUNT} --device nvidia.com/gpu=all -e TZ=${TZ} --name ${file} --rm -it cupy/cupy ${CMD}
+
+# This was working on Fedora WS 40 - after --gpus=all flag was added
+# echo podman run ${MOUNT} --gpus=all -e TZ=${TZ} --name ${file} --rm -it cupy/cupy ${CMD}
+# podman run ${MOUNT} --gpus=all -e TZ=${TZ} --name ${file} --rm -it cupy/cupy ${CMD}

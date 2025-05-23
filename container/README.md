@@ -17,8 +17,14 @@ with the official cupy/cupy docker image.
 Note that the actual steps are different on at least Fedora 40 than documented
 by the cupy project at [LINK](https://github.com/cupy/cupy?tab=readme-ov-file#docker).
 
-## pre-requisites for Fedora 40
-I have only tested this on Fedora 40. The pre-requisites may be lighter without SELinux. YMMV.
+## bluefin-dx-nvidia:stable
+
+This is the OS image with which I am currently using to test.
+
+It has all the prerequisites met.
+
+## pre-requisites for Fedora WS 40
+I have tested this on Fedora WS 40 before moving to bluefin. The pre-requisites may be lighter without SELinux. YMMV.
 
 * Install cuda-toolkit - https://copr.fedorainfracloud.org/coprs/g/ai-ml/nvidia-container-toolkit/
 * use podman: The `nvidia-container-toolkit-selinux` package seems to provide support for podman but not docker.
@@ -30,13 +36,11 @@ I have only tested this on Fedora 40. The pre-requisites may be lighter without 
 above as there are some security setup and validation steps that shouild be run.
 
 ```bash
-# OPTIONAL - should have already been done when following steps from
-# https://copr.fedorainfracloud.org/coprs/g/ai-ml/nvidia-container-toolkit/
 podman pull cupy/cupy
 ```
 
 * To verify basic script usage ... you should see the contents of `$PWD` from inside the container.
-> An error could indicate inproper setup, security perms, etc.
+> An error could indicate improper setup, security perms, etc.
 
 ```bash
 ./run_cupy ls -lah /cupy-vol/
